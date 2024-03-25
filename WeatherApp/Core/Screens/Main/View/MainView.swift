@@ -39,11 +39,7 @@ final class MainView: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        view.addView(loaderView)
-        loaderView.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-        loaderView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
-        loaderView.heightAnchor.constraint(equalToConstant: 10).isActive = true
-        loaderView.widthAnchor.constraint(equalToConstant: 10).isActive = true
+        
     }
     
     // MARK:  setup ViewModel
@@ -82,10 +78,18 @@ final class MainView: UIViewController {
     
     // MARK:  setup ViewController
     private func setupView() {
+        view.addView(loaderView)
+        
         view.addView(tempView)
         view.addView(forecastCollection)
         tempView.addView(searchButton)
         NSLayoutConstraint.activate([
+            loaderView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            loaderView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+            loaderView.heightAnchor.constraint(equalToConstant: 10),
+            loaderView.widthAnchor.constraint(equalToConstant: 10),
+            
+            
             forecastCollection.leftAnchor.constraint(equalTo: view.leftAnchor),
             forecastCollection.rightAnchor.constraint(equalTo: view.rightAnchor),
             forecastCollection.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: 10),
