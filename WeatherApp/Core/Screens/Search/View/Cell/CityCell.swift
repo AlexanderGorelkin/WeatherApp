@@ -17,6 +17,7 @@ final class CityCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        backgroundColor = .clear
         addView(cityName)
         NSLayoutConstraint.activate([
             cityName.topAnchor.constraint(equalTo: topAnchor, constant: 10),

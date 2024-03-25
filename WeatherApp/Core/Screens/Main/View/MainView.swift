@@ -23,6 +23,7 @@ final class MainView: UIViewController {
     private lazy var tempView = TempView()
     private lazy var forecastCollection = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: createLayout())
+        collectionView.backgroundColor = .clear
         collectionView.dataSource = self
         collectionView.register(ForecastCell.self, forCellWithReuseIdentifier: ForecastCell.indetifier)
         return collectionView

@@ -15,6 +15,7 @@ final class SearchView: UIViewController {
     private lazy var tempView = TempView()
     private lazy var cityTableView: UITableView = {
         let tableView = UITableView()
+        tableView.backgroundColor = .clear
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(CityCell.self, forCellReuseIdentifier: CityCell.identifier)
@@ -24,6 +25,7 @@ final class SearchView: UIViewController {
    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .white
         searchBar.delegate = self
         setupView()
         setupViewModel()

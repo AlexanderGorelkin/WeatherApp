@@ -13,6 +13,7 @@ final class DefaultLabel: UILabel {
         super.init(frame: .zero)
         self.text = text
         self.font = font
+        self.textColor = .black
         self.textAlignment = textAligmanet
         self.numberOfLines = 0
     }
